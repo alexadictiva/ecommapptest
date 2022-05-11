@@ -204,6 +204,8 @@ SPECIFICS STYLES
 table {
   min-width: 768px;
   width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 .tableTitle tr {
   background: var(--darkGray);
@@ -242,7 +244,7 @@ table {
   text-align: center;
 }
 .tableBody tr td:nth-child(3) {
-  color: var(--black);
+  font-weight: bold;
   padding-left: 10px;
 }
 .tableBody tr td:nth-child(4),
@@ -289,6 +291,14 @@ table {
 
   .tableContainer {
     overflow-x: hidden;
+  }
+  .tableBody tr:hover {
+    background: var(--gray);
+    color: var(--white);
+  }
+  .tableBody td:hover {
+    background: var(--darkGray);
+    color: var(--white);
   }
   .columnOne,
   .columnTwo {
