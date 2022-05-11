@@ -292,6 +292,12 @@ table {
   .tableContainer {
     overflow-x: hidden;
   }
+  .tableBody tr {
+    transition: all 0.2s linear;
+  }
+  .tableBody td {
+    transition: all 0.2s linear;
+  }
   .tableBody tr:hover {
     background: var(--gray);
     color: var(--white);
