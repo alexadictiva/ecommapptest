@@ -16,37 +16,41 @@
   font-style: normal;
   font-display: swap;
 }
-
+:root {
+  --font1: "Poppins";
+  --font2: "Poppins-bold";
+  --black: #000000;
+  --white: #ffffff;
+  --green: #53bf48;
+  --brown: #c08848;
+  --gray: #898b9c;
+  --blue: #4f77c8;
+  --lightBlue: #d7e5ff;
+  --lightGray: #c4c4c4;
+  --darkGray: #727588;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font1);
   background: #eee;
   padding: 20px;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
-
-.facturar, .pendiente, .listo{
-  border-radius:5px;  
-  cursor:pointer;
-  padding:3px 8px;
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 4px;
 }
-.pendiente, .listo{
-  display:inline;
- }
-
-
-.facturar{
-  background:blue;
+.icon {
+  width: 10px;
 }
-.pendiente{
-  background:yellow
-}
-.listo{
-  background:green
+.arrows {
+  width: 25px;
 }
 .referidosContainer {
   margin-bottom: 20px;
@@ -56,16 +60,21 @@ body {
 .referidosPanel h3 {
   margin-bottom: 10px;
 }
-
+.referidosTop h1 {
+  font-size: 22px;
+}
 .referidosTop p {
   max-width: 768px;
+  font-size: 15px;
+  line-height: 22px;
 }
 .referidosPanel {
-  background: white;
+  background: var(--white);
   padding: 20px;
+  border-radius: 3px;
 }
 .referidosPanel h3 {
-  font-weight: 300;
+  font-size: 16.5px;
 }
 .panelContainer {
   display: flex;
@@ -74,75 +83,86 @@ body {
   justify-content: center;
 }
 .panel {
-  width: 250px;
-  background: lightblue;
+  width: 220px;
+  background: var(--lightBlue);
   padding: 10px 20px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .titlePanel {
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: bold;
 }
 .descriptionPanel {
-  font-weight: bold;
-  color: blue;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--blue);
 }
 
 .linkReferidos {
-  box-shadow: 0px 0px 8px black;
+  box-shadow: 1px 1px 7px var(--gray);
   border-radius: 2px;
-  padding-bottom: 5px;
+  padding: 0 0 5px 0;
+  background: var(--white);
 }
 .linkTitle {
-  background: #aaa;
+  background: var(--darkGray);
+  border-radius: 2px 2px 0 0;
 }
 .linkTitle h4 {
-  color: white;
-  padding: 10px;
-}
-.linkBody {
-  margin: 10px;
-  background: white;
-}
-.linkBody p:first-child {
-  margin-bottom: 10px;
-}
-.linkBody p a {
-  font-weight: bold;
-  text-decoration: none;
+  color: var(--white);
+  padding: 8px 10px;
+  font-size: 13px;
 }
 
-.linkTitle h4 {
-  color: white;
-  padding: 10px;
+.linkBody {
+  font-size: 15px;
+  margin: 10px 0 5px 10px;
+  border-radius: 0 0 2px 2px;
 }
+
+.ancorLink {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+/* Referidos Invitados*/
 .referidosInvitados,
 .referidosEcomm {
   margin-top: 20px;
   border-radius: 4px;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px var(--black);
 }
 .referidosInvitados h3,
 .referidosEcomm h3 {
-  padding: 10px;
-  background: white;
-  font-weight: 300;
-  font-size: 17px;
+  padding: 8px 10px;
+  background: var(--white);
+  font-size: 15px;
 }
-.tableContainer{
-  overflow-x:scroll
+.tableContainer {
+  overflow-x: scroll;
 }
+
 table {
-  min-width:400px;
+  min-width: 768px;
   width: 100%;
 }
 .tableTitle tr {
-  background: #aaa;
+  background: var(--darkGray);
 }
 .tableTitle tr th {
-  color: white;
-  padding: 10px;
-  background-color: #aaa;
+  color: var(--white);
+  padding: 8px 10px;
+  background-color: var(--darkGray);
+  font-size: 13px;
+}
+.columnOne,
+.columnTwo {
+  width: 19%;
 }
 .apodo,
 .actividad {
@@ -150,11 +170,11 @@ table {
 }
 
 .tableBody tr {
-  height: 30px;
-  color: #aaa;
+  height: 35px;
+  color: var(--darkGray);
 }
 .tableBody tr td {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .tableBody tr td:nth-child(1) {
@@ -164,12 +184,51 @@ table {
   text-align: center;
 }
 .tableBody tr td:nth-child(3) {
-  color: black;
+  color: var(--black);
   padding-left: 10px;
 }
+.facturar,
+.pendiente,
+.listo {
+  border-radius: 2px;
+  cursor: pointer;
+  color: var(--white);
+  display: inline;
+}
+.pendiente,
+.listo {
+  padding: 5px 8px;
+}
 
+.facturar {
+  padding: 3px;
+  background: var(--blue);
+  font-weight: bold;
+}
+.pendiente {
+  background: var(--brown);
+}
+.listo {
+  background: var(--green);
+}
+@media screen and (min-width: 580px) {
+  .referidosPanel {
+    max-width: 580px;
+  }
+  .panel {
+    width: calc((100% / 3) - 10px);
+  }
+}
 @media screen and (min-width: 1024px) {
   .panelContainer {
     justify-content: start;
+  }
+
+  .tableContainer {
+    overflow-x: hidden;
+  }
+  .columnOne,
+  .columnTwo {
+    width: 15%;
   }
 }
