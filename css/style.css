@@ -160,10 +160,7 @@ table {
   background-color: var(--darkGray);
   font-size: 13px;
 }
-.columnOne,
-.columnTwo {
-  width: 19%;
-}
+
 .apodo,
 .actividad {
   text-align: start;
@@ -175,6 +172,10 @@ table {
 }
 .tableBody tr td {
   font-size: 14px;
+}
+.columnOne,
+.columnTwo {
+  width: 19%;
 }
 
 .tableBody tr td:nth-child(1) {
@@ -201,7 +202,7 @@ table {
 }
 
 .facturar {
-  padding: 3px;
+  padding: 3px 30px 3px 3px;
   background: var(--blue);
   font-weight: bold;
 }
